@@ -19,15 +19,21 @@ def get_connection():
 
 def increment_video_stat():
     conn = get_connection()
-    conn.execute("UPDATE stats SET videos_played "
-                 "= videos_played + 1 WHERE id = 1")
-    conn.commit()
-    conn.close()
+    try:
+        conn.execute(
+            "UPDATE stats SET videos_played = videos_played + 1 WHERE id = 1"
+        )
+        conn.commit()
+    finally:
+        conn.close()
+
 
 
 def get_video_stat():
     conn = get_connection()
-    cur = conn.execute("SELECT videos_played FROM stats WHERE id = 1")
-    result = cur.fetchone()[0]
-    conn.close()
-    return result
+    try:
+        result = conn.execute("SELECT videos_played FROM stats WHERE id = 1").fetchone()
+        return result[0] if result is not None else 0
+    finally:
+        conn.close()
+

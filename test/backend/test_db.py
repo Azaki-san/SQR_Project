@@ -31,3 +31,30 @@ def test_increment_video_stat(mock_get_connection):
     )
     mock_conn.commit.assert_called_once()
     mock_conn.close.assert_called_once()
+
+@mock.patch("app.db.database.get_connection")
+def test_get_video_stat_none_return(mock_get_connection):
+    mock_conn = mock.Mock()
+    mock_cursor = mock.Mock()
+    mock_cursor.fetchone.return_value = None
+    mock_conn.execute.return_value = mock_cursor
+    mock_get_connection.return_value = mock_conn
+
+    result = database.get_video_stat()
+
+    assert result == 0
+    mock_conn.close.assert_called_once()
+
+
+@mock.patch("app.db.database.get_connection")
+def test_increment_video_stat_exception(mock_get_connection):
+    mock_conn = mock.Mock()
+    mock_conn.execute.side_effect = Exception("DB Error")
+    mock_get_connection.return_value = mock_conn
+
+    try:
+        database.increment_video_stat()
+    except Exception as e:
+        assert str(e) == "DB Error"
+        mock_conn.close.assert_called_once()
+
