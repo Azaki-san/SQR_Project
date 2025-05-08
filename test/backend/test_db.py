@@ -1,4 +1,3 @@
-import pytest
 from unittest import mock
 from app.db import database
 
@@ -15,7 +14,8 @@ def test_get_video_stat(mock_get_connection):
     result = database.get_video_stat()
 
     assert result == 5
-    mock_conn.execute.assert_called_with("SELECT videos_played FROM stats WHERE id = 1")
+    (mock_conn.execute.
+     assert_called_with("SELECT videos_played FROM stats WHERE id = 1"))
     mock_conn.close.assert_called_once()
 
 

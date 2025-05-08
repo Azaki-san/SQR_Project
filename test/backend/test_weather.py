@@ -1,4 +1,5 @@
-from app.services.weather import get_weather  # замени your_module на имя файла
+from app.services.weather import get_weather
+
 
 def test_get_weather_success(mocker):
     mock_response = {
@@ -15,12 +16,14 @@ def test_get_weather_success(mocker):
     assert result["weatherDesc"] == "Clear"
     assert result["time_of_day"] in ["day", "night"]
 
+
 def test_get_weather_exception(mocker):
     mocker.patch("httpx.get", side_effect=Exception("Timeout"))
 
     result = get_weather()
     assert "error" in result
     assert result["error"] == "Timeout"
+
 
 class MockResponse:
     def __init__(self, json_data):

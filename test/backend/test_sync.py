@@ -1,5 +1,6 @@
-import pytest, time
-from fastapi import UploadFile, HTTPException
+import pytest
+import time
+from fastapi import HTTPException
 from fastapi.testclient import TestClient
 from app.services import sync
 from app.main import app
@@ -49,7 +50,8 @@ async def test_upload_video_success(mocker, tmp_path):
 
     # Mock ffmpeg
     mocker.patch("app.services.sync._ensure_ffmpeg", return_value=None)
-    mocker.patch("app.services.sync.subprocess.run", return_value=mocker.Mock(returncode=0, stderr=""))
+    mocker.patch("app.services.sync.subprocess.run",
+                 return_value=mocker.Mock(returncode=0, stderr=""))
     mocker.patch("app.services.sync._parse_duration", return_value=5.0)
     mocker.patch("app.services.sync.VIDEO_DIR", tmp_path)
 
@@ -66,7 +68,8 @@ def test_get_video_status_idle():
 
 
 def test_get_video_status_playing(mocker):
-    sync._state.update(filename="video.mp4", start_time=time.time(), expected_end=time.time() + 10)
+    sync._state.update(filename="video.mp4",
+                       start_time=time.time(), expected_end=time.time() + 10)
     mocker.patch("app.services.sync.get_viewer_count", return_value=42)
     status = sync.get_video_status()
     assert status["status"] == "playing"

@@ -40,6 +40,9 @@ jobs:
     - name: Install project dependencies
       run: poetry install --no-interaction --no-root
 
+    - name: Run tests
+      run: poetry run pytest .
+
     # Linters (existing)
     - name: Run Ruff
       run: poetry run ruff check .

@@ -29,7 +29,8 @@ def test_get_video_status_failure():
 
 
 def test_get_video_status_exception():
-    with mock.patch("requests.get", side_effect=requests.exceptions.RequestException):
+    with mock.patch("requests.get",
+                    side_effect=requests.exceptions.RequestException):
         elapsed, filename = get_video_status()
         assert elapsed == 0
         assert filename is None
@@ -45,6 +46,7 @@ def test_get_weather_status_success():
 
 
 def test_get_weather_status_failure():
-    with mock.patch("requests.get", side_effect=requests.exceptions.RequestException):
+    with mock.patch("requests.get",
+                    side_effect=requests.exceptions.RequestException):
         weather = get_weather_status()
         assert weather == {"error": ""}

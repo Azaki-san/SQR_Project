@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbbd34a2-43f9-4c66-a02c-5f09bd89e735" name="Changes" comment="rescan sonar" />
+    <list default="true" id="cbbd34a2-43f9-4c66-a02c-5f09bd89e735" name="Changes" comment="fix conflict">
+      <change beforePath="$PROJECT_DIR$/.bandit.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.bandit.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/testing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/testing.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/locustfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/backend/test_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/backend/test_sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_sync.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/backend/test_viewer_count.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_viewer_count.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/backend/test_weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_weather.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/frontend/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/frontend/test_api.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746724006203</updated>
-      <workItem from="1746724007239" duration="2902000" />
+      <workItem from="1746724007239" duration="4564000" />
     </task>
     <task id="LOCAL-00001" summary="add ci">
       <option name="closed" value="true" />
@@ -90,7 +108,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746726465509</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add locust">
+      <option name="closed" value="true" />
+      <created>1746734312888</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746734312888</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix conflict">
+      <option name="closed" value="true" />
+      <created>1746734483495</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746734483495</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +135,8 @@
     <MESSAGE value="add ci v2" />
     <MESSAGE value="check ci" />
     <MESSAGE value="rescan sonar" />
-    <option name="LAST_COMMIT_MESSAGE" value="rescan sonar" />
+    <MESSAGE value="add locust" />
+    <MESSAGE value="fix conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix conflict" />
   </component>
 </project>

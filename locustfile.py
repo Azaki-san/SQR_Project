@@ -4,7 +4,8 @@ import os
 
 
 def generate_random_ip():
-    return f"{random.randint(1, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(1, 254)}"
+    return (f"{random.randint(1, 255)}.{random.randint(0, 255)}."
+            f"{random.randint(0, 255)}.{random.randint(1, 254)}")
 
 
 class FastAPIUser(HttpUser):
@@ -21,12 +22,14 @@ class FastAPIUser(HttpUser):
             if response.status_code == 200:
                 response.success()
             else:
-                response.failure(f"Failed to get video: {response.status_code}")
+                response.failure(f"Failed to get video:"
+                                 f" {response.status_code}")
 
     @task(2)
     def send_ping(self):
         headers = {"X-Forwarded-For": self.viewer_ip}
-        with self.client.post("/ping", headers=headers, catch_response=True) as response:
+        with self.client.post("/ping", headers=headers,
+                              catch_response=True) as response:
             if response.status_code == 200:
                 response.success()
             else:
@@ -52,7 +55,9 @@ class FastAPIUser(HttpUser):
         with open(self.test_video_path, "rb") as file:
             headers = {"X-Forwarded-For": self.viewer_ip}
             files = {"file": (self.test_video_path, file, "video/mp4")}
-            with self.client.post("/upload", files=files, headers=headers, catch_response=True) as response:
+            with self.client.post("/upload", files=files,
+                                  headers=headers,
+                                  catch_response=True) as response:
                 if response.status_code == 200:
                     response.success()
                 else:
