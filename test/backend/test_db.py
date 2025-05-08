@@ -32,6 +32,7 @@ def test_increment_video_stat(mock_get_connection):
     mock_conn.commit.assert_called_once()
     mock_conn.close.assert_called_once()
 
+
 @mock.patch("app.db.database.get_connection")
 def test_get_video_stat_none_return(mock_get_connection):
     mock_conn = mock.Mock()
@@ -57,4 +58,3 @@ def test_increment_video_stat_exception(mock_get_connection):
     except Exception as e:
         assert str(e) == "DB Error"
         mock_conn.close.assert_called_once()
-
