@@ -2,6 +2,7 @@ from fastapi import APIRouter, UploadFile, Request
 from app.services.sync import get_video_filename_path, get_video_status
 from fastapi.responses import FileResponse
 
+from app.services.weather import get_weather
 from app.utils.viewer_count import viewer_ping, get_viewer_count
 
 router = APIRouter()
@@ -21,3 +22,7 @@ def ping(request: Request):
 @router.get("/status")
 def status():
     return get_video_status()
+
+@router.get("/weather")
+def weather():
+    return get_weather()
