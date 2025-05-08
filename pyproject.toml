@@ -17,6 +17,8 @@ pymediainfo = "^7.0.1"
 ruff = "^0.11.8"
 flake8 = "^7.2.0"
 bandit = "^1.8.3"
+selenium = "^4.32.0"
+webdriver-manager = "^4.0.2"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.0.0"
