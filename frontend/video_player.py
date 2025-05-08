@@ -1,6 +1,7 @@
 from streamlit.components.v1 import html  # type: ignore
 from api import BACKEND_URL
 
+
 def render_video_player(filename, elapsed):
     video_url = f"{BACKEND_URL}/videos/{filename}"
     video_html = f"""
@@ -29,7 +30,8 @@ def render_video_player(filename, elapsed):
       Your browser does not support the video tag.
     </video>
 
-    <div id="viewersCount" style="font-size:18px;color:blue;margin-top:15px;"></div>
+    <div id="viewersCount"
+    style="font-size:18px;color:blue;margin-top:15px;"></div>
 
     <script>
     const backend = "{BACKEND_URL}";

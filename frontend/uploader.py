@@ -3,6 +3,7 @@ import requests  # type: ignore
 from api import BACKEND_URL
 from video_player import render_video_player  # <- Assuming you split this out
 
+
 def render_upload_form():
     uploaded = st.file_uploader(
         "Upload a video",
@@ -15,7 +16,8 @@ def render_upload_form():
             try:
                 r = requests.post(
                     f"{BACKEND_URL}/upload",
-                    files={"file": (uploaded.name, uploaded.getbuffer())}
+                    files={"file": (uploaded.name, uploaded.getbuffer())},
+                    timeout=(10, 600)
                 )
                 if r.ok:
                     st.session_state["uploaded_success"] = True
@@ -26,7 +28,8 @@ def render_upload_form():
             except Exception as e:
                 st.error(f"Upload failed: {e}")
 
-    if st.session_state.get("uploaded_success") and st.session_state.get("uploaded_filename"):
+    if (st.session_state.get("uploaded_success")
+            and st.session_state.get("uploaded_filename")):
         st.markdown("### Video Preview")
         # Example: assume backend always starts playing from 0
         render_video_player(st.session_state["uploaded_filename"], elapsed=0)

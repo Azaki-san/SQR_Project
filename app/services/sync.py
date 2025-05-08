@@ -1,5 +1,7 @@
 import time
-import os, time, shutil, subprocess
+import os
+import shutil
+import subprocess
 from pathlib import Path
 
 from fastapi import HTTPException, UploadFile
@@ -38,12 +40,12 @@ def _ensure_ffmpeg() -> None:
 
     env = os.environ.get("FFMPEG_PATH")
     if env and Path(env).is_file():
-        FFMPEG_CMD = env;
+        FFMPEG_CMD = env
         return
 
     shim = shutil.which("ffmpeg")
     if shim:
-        FFMPEG_CMD = "ffmpeg";
+        FFMPEG_CMD = "ffmpeg"
         return
 
     # fall‑back guesses
@@ -61,7 +63,7 @@ def _ensure_ffmpeg() -> None:
         ]
     for g in guesses:
         if Path(g).is_file():
-            FFMPEG_CMD = str(g);
+            FFMPEG_CMD = str(g)
             return
 
     raise HTTPException(
@@ -84,7 +86,8 @@ def _validate_upload(file: UploadFile) -> None:
         if expected and file.content_type != expected:
             raise HTTPException(
                 400,
-                f"Wrong content‑type '{file.content_type}', expected '{expected}'",
+                f"Wrong content‑type '{file.content_type}',"
+                f" expected '{expected}'",
             )
 
 
@@ -131,7 +134,8 @@ def get_video_status() -> dict:
 
 
 async def upload_video(file: UploadFile) -> dict:
-    """Save, validate and start playback. 409 if something is already playing."""
+    """Save, validate and start playback.
+     409 if something is already playing."""
     _expire_if_finished()
     if _state["filename"]:
         raise HTTPException(409, "A video is already playing")
@@ -149,9 +153,11 @@ async def upload_video(file: UploadFile) -> dict:
         raise
 
     now = time.time()
-    _state.update(filename=file.filename, start_time=now, expected_end=now + duration)
+    _state.update(filename=file.filename,
+                  start_time=now, expected_end=now + duration)
 
-    return {"message": "video uploaded", "filename": file.filename, "duration": duration}
+    return {"message": "video uploaded",
+            "filename": file.filename, "duration": duration}
 
 
 def _parse_duration(path: Path) -> float:

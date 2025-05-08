@@ -1,5 +1,6 @@
-import streamlit as st # type: ignore
+import streamlit as st  # type: ignore
 from api import get_weather_status
+
 
 def render_weather_info():
     weather = get_weather_status()
@@ -9,4 +10,5 @@ def render_weather_info():
         return
 
     icon = "🌞" if weather["time_of_day"] == "day" else "🌙"
-    st.markdown(f"### {icon} Weather Now: {weather['weatherDesc']} - {weather['temp_C']}°C")
+    st.markdown(f"### {icon} Weather Now: "
+                f"{weather['weatherDesc']} - {weather['temp_C']}°C")
