@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbbd34a2-43f9-4c66-a02c-5f09bd89e735" name="Changes" comment="fix conflict">
-      <change beforePath="$PROJECT_DIR$/.bandit.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.bandit.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/testing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/testing.yaml" afterDir="false" />
+    <list default="true" id="cbbd34a2-43f9-4c66-a02c-5f09bd89e735" name="Changes" comment="test ci">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/locustfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/backend/test_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/backend/test_sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_sync.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/backend/test_viewer_count.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_viewer_count.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/backend/test_weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_weather.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/frontend/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/frontend/test_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746724006203</updated>
-      <workItem from="1746724007239" duration="4564000" />
+      <workItem from="1746724007239" duration="5290000" />
     </task>
     <task id="LOCAL-00001" summary="add ci">
       <option name="closed" value="true" />
@@ -124,7 +118,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746734483495</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test ci">
+      <option name="closed" value="true" />
+      <created>1746735651780</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746735651780</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test ci">
+      <option name="closed" value="true" />
+      <created>1746735729544</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746735729544</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +147,7 @@
     <MESSAGE value="rescan sonar" />
     <MESSAGE value="add locust" />
     <MESSAGE value="fix conflict" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix conflict" />
+    <MESSAGE value="test ci" />
+    <option name="LAST_COMMIT_MESSAGE" value="test ci" />
   </component>
 </project>

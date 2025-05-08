@@ -41,7 +41,9 @@ jobs:
       run: poetry install --no-interaction --no-root
 
     - name: Run tests
-      run: poetry run pytest .
+      run: |
+        poetry run coverage run -m pytest
+        poetry run coverage report --fail-under=60 -m
 
     # Linters (existing)
     - name: Run Ruff
