@@ -58,3 +58,4 @@ jobs:
       run: snyk test --file=poetry.lock --package-manager=poetry
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
