@@ -36,4 +36,3 @@ def get_video_stat():
         return result[0] if result is not None else 0
     finally:
         conn.close()
-
