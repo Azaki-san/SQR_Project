@@ -18,6 +18,10 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: |
+            -Dsonar.projectBaseDir=${{ github.workspace }}
+
   code-analysis:
     runs-on: ubuntu-latest
 
