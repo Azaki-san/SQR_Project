@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile, Request
-from app.services.sync import get_video_filename_path
+from app.services.sync import get_video_filename_path, get_video_status
 from fastapi.responses import FileResponse
 
 from app.utils.viewer_count import viewer_ping, get_viewer_count
@@ -17,3 +17,7 @@ def ping(request: Request):
     viewer_id = request.client.host
     viewer_ping(viewer_id)
     return {"viewers": get_viewer_count()}
+
+@router.get("/status")
+def status():
+    return get_video_status()
